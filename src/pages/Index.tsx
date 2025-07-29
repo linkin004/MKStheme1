@@ -49,8 +49,8 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-7xl font-mono font-bold mb-6">
-              <span className="text-green-500 glow-green glitch">CYPHER</span>
-              <span className="text-yellow-500 glow-yellow">NET</span>
+              <span className="text-green-500 glow-green glitch">CORNER</span>
+              <span className="text-yellow-500 glow-yellow">tab</span>
             </h1>
             <p className="text-xl md:text-2xl text-green-400/80 mb-8 font-mono leading-relaxed">
               The last bastion of digital freedom.<br />
