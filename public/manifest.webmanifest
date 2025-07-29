@@ -1,0 +1,16 @@
+{
+  "name": "CypherNet - Decentralized Freedom Network",
+  "short_name": "CypherNet",
+  "description": "A cypherpunk platform for true digital freedom. Decentralized articles, secure marketplace, and encrypted communications built on Nostr.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#00ff00",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}
