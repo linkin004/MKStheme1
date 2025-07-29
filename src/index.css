@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Cypherpunk dark theme - light mode fallback */
+    --background: 0 0% 8%;
+    --foreground: 120 100% 50%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 120 100% 50%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 120 100% 50%;
+
+    --primary: 120 100% 50%;
+    --primary-foreground: 0 0% 8%;
+
+    --secondary: 0 0% 16%;
+    --secondary-foreground: 120 60% 70%;
+
+    --muted: 0 0% 16%;
+    --muted-foreground: 120 30% 60%;
+
+    --accent: 60 100% 50%;
+    --accent-foreground: 0 0% 8%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 120 30% 25%;
+    --input: 0 0% 16%;
+    --ring: 120 100% 50%;
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 120 100% 50%;
+    --sidebar-primary: 120 100% 50%;
+    --sidebar-primary-foreground: 0 0% 8%;
+    --sidebar-accent: 0 0% 14%;
+    --sidebar-accent-foreground: 120 60% 70%;
+    --sidebar-border: 120 30% 20%;
+    --sidebar-ring: 120 100% 50%;
+  }
+
+  .dark {
+    /* Cypherpunk dark theme - primary */
+    --background: 0 0% 4%;
+    --foreground: 120 100% 50%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 120 100% 50%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 120 100% 50%;
+
+    --primary: 120 100% 50%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 120 60% 70%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 120 30% 60%;
+
+    --accent: 60 100% 50%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 120 30% 20%;
+    --input: 0 0% 12%;
+    --ring: 120 100% 50%;
+    
+    --sidebar-background: 0 0% 2%;
+    --sidebar-foreground: 120 100% 50%;
+    --sidebar-primary: 120 100% 50%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 120 60% 70%;
+    --sidebar-border: 120 30% 15%;
+    --sidebar-ring: 120 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono Variable', 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  /* Cypherpunk glow effects */
+  .glow-green {
+    text-shadow: 0 0 5px theme(colors.green.500), 0 0 10px theme(colors.green.500), 0 0 15px theme(colors.green.500);
+  }
+  
+  .glow-yellow {
+    text-shadow: 0 0 5px theme(colors.yellow.500), 0 0 10px theme(colors.yellow.500), 0 0 15px theme(colors.yellow.500);
+  }
+  
+  .glow-red {
+    text-shadow: 0 0 5px theme(colors.red.500), 0 0 10px theme(colors.red.500), 0 0 15px theme(colors.red.500);
+  }
+
+  .border-glow {
+    box-shadow: 0 0 5px theme(colors.green.500/0.5), 0 0 10px theme(colors.green.500/0.3);
+  }
+
+  .border-glow-yellow {
+    box-shadow: 0 0 5px theme(colors.yellow.500/0.5), 0 0 10px theme(colors.yellow.500/0.3);
+  }
+
+  /* Matrix-style scrolling background */
+  .matrix-bg {
+    background: 
+      linear-gradient(90deg, transparent 24%, rgba(0, 255, 0, 0.03) 25%, rgba(0, 255, 0, 0.03) 26%, transparent 27%, transparent 74%, rgba(0, 255, 0, 0.03) 75%, rgba(0, 255, 0, 0.03) 76%, transparent 77%, transparent),
+      linear-gradient(rgba(0, 255, 0, 0.02) 50%, transparent 50%);
+    background-size: 20px 20px;
+  }
+
+  /* Cyberpunk grid overlay */
+  .cyber-grid {
+    background-image: 
+      linear-gradient(rgba(0, 255, 0, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 0, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Terminal-style text */
+  .terminal-text {
+    font-family: 'JetBrains Mono Variable', 'JetBrains Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+
+  /* Glitch effect */
+  .glitch {
+    position: relative;
+    animation: glitch 2s infinite;
+  }
+
+  @keyframes glitch {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+  }
+
+  /* Neon border animation */
+  .neon-border {
+    border: 1px solid theme(colors.green.500);
+    animation: neon-pulse 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes neon-pulse {
+    from {
+      box-shadow: 0 0 5px theme(colors.green.500/0.5), 0 0 10px theme(colors.green.500/0.3), 0 0 15px theme(colors.green.500/0.2);
+    }
+    to {
+      box-shadow: 0 0 10px theme(colors.green.500/0.8), 0 0 20px theme(colors.green.500/0.5), 0 0 30px theme(colors.green.500/0.3);
+    }
+  }
+}
